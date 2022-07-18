@@ -1,8 +1,6 @@
 import streamlit as st
 from transformers import pipeline
 
-from transformers import AutoModelForQuestionAnswering, AutoTokenizer
-
 
 def load_file():
     """Load text from file"""
@@ -29,11 +27,7 @@ if __name__ == "__main__":
             st.write(raw_text)
 
         # Perform question answerin
-        model_name = "deepset/roberta-base-squad2"
-        question_answerer = pipeline('question-answering', model=model_name, tokenizer=model_name)
-
-        model = AutoModelForQuestionAnswering.from_pretrained(model_name)
-        tokenizer = AutoTokenizer.from_pretrained(model_name)
+        question_answerer = pipeline('question-answering')
 
         answer = ''
         question = st.text_input('Ask a question')
