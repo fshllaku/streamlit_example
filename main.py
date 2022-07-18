@@ -45,4 +45,3 @@ if __name__ == "__main__":
             })
 
         st.write(answer)
-        st.write(question_answerer)
